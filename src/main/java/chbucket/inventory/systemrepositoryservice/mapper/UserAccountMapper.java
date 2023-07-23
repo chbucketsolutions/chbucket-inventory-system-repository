@@ -1,6 +1,5 @@
 package chbucket.inventory.systemrepositoryservice.mapper;
 
-import chbucket.inventory.systemrepositoryservice.dto.request.AuthRequestDto;
 import chbucket.inventory.systemrepositoryservice.dto.user.UserAccountDto;
 import chbucket.inventory.systemrepositoryservice.model.user.UserAccount;
 
