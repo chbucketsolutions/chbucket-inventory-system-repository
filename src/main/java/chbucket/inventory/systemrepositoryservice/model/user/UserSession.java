@@ -9,7 +9,7 @@ import javax.persistence.*;
 @AttributeOverride(name = "id", column = @Column(name = "id", nullable = false))
 public class UserSession extends StandardEntity {
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private UserAccount userAccount;
 

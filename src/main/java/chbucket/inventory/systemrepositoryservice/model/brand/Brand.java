@@ -1,11 +1,10 @@
 package chbucket.inventory.systemrepositoryservice.model.brand;
 
 import chbucket.inventory.systemrepositoryservice.model.entity.StandardEntity;
+import chbucket.inventory.systemrepositoryservice.model.product.Product;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product_brand")
@@ -13,6 +12,9 @@ import javax.persistence.Table;
 public class Brand extends StandardEntity{
     @Column(name = "brand_name")
     private String brandName;
+
+    @OneToMany(mappedBy = "brand")
+    private List<Product> product;
 
     public String getBrandName() {
         return brandName;

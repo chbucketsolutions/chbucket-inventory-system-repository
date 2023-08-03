@@ -1,11 +1,10 @@
 package chbucket.inventory.systemrepositoryservice.model.user;
 
 import chbucket.inventory.systemrepositoryservice.model.entity.StandardEntity;
+import chbucket.inventory.systemrepositoryservice.model.product.Product;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "user_account")
@@ -29,6 +28,12 @@ public class UserAccount extends StandardEntity {
 
     @Column(name = "address")
     private String address;
+
+    @OneToMany(mappedBy = "userAccount", cascade = CascadeType.ALL)
+    private List<Product> product;
+
+    @OneToMany(mappedBy = "userAccount", cascade = CascadeType.ALL)
+    private List<UserSession> userSession;
 
     public String getUsername() {
         return username;

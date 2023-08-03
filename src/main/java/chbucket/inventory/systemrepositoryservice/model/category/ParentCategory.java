@@ -2,10 +2,8 @@ package chbucket.inventory.systemrepositoryservice.model.category;
 
 import chbucket.inventory.systemrepositoryservice.model.entity.StandardEntity;
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product_parentcategory")
@@ -13,6 +11,9 @@ import javax.persistence.Table;
 public class ParentCategory extends StandardEntity {
     @Column(name = "parentcategory_name")
     private String parentCategoryName;
+
+    @OneToMany(mappedBy = "parentCategory", cascade = CascadeType.ALL)
+    private List<SubCategory> subCategory;
 
     public String getParentCategoryName() {
         return parentCategoryName;

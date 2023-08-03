@@ -1,12 +1,8 @@
 package chbucket.inventory.systemrepositoryservice.service.impl;
 
-import chbucket.inventory.systemrepositoryservice.dto.product.BrandDto;
 import chbucket.inventory.systemrepositoryservice.dto.product.ParentCategoryDto;
-import chbucket.inventory.systemrepositoryservice.mapper.ProductBrandMapper;
 import chbucket.inventory.systemrepositoryservice.mapper.ProductParentCategoryMapper;
-import chbucket.inventory.systemrepositoryservice.model.brand.Brand;
 import chbucket.inventory.systemrepositoryservice.model.category.ParentCategory;
-import chbucket.inventory.systemrepositoryservice.repository.ProductBrandRepository;
 import chbucket.inventory.systemrepositoryservice.repository.ProductParentCategoryRepository;
 import chbucket.inventory.systemrepositoryservice.service.ParentCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +17,6 @@ public class ParentCategoryServiceImpl implements ParentCategoryService {
 
     private final ProductParentCategoryRepository parentCategoryRepository;
     private Optional<ParentCategory> isParentCategoryExist;
-    private List<ParentCategory> parentCategoryList;
 
     @Autowired
     public ParentCategoryServiceImpl(ProductParentCategoryRepository parentCategoryRepository){
